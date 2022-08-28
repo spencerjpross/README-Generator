@@ -98,10 +98,6 @@ inquire
 });
 
 
-
-
-
-
     // var responses = JSON.stringify(response);
     fs.writeFile('README.md', JSON.stringify(response), (err) =>
     err ? console.error(err) : console.log('Success!')
@@ -110,12 +106,12 @@ inquire
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile('README.md', data, (err) =>
-    
+    fs.writeFile('README.md', data, (err) => {
+        if(err){
+            console.log(err)
+        }
+        console.log('Your README.md file has been created!')
+    }
+)}
 
 
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
